@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rotate Like Fan</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .propeller {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      border-radius: 50%;
+      position: relative;
+      animation: rotate 2s linear infinite;
+    }
+    .stick{
+      position: absolute;
+      width: 20px;
+      height: 500px;
+      background-color: black;
+      top: 50vh;
+    }
+    .scnd-prop-div {
+      position: absolute;
+      top: -50%;
+    }
+
+    .fan {
+      width: 0;
+      height: 0;
+      border: 100px solid;
+      border-color: transparent transparent transparent gray;
+      top: 0;
+      left: 0;
+      transform-origin: bottom center;
+      position: absolute;
+    }
+
+    .fan:nth-child(1) {
+      transform: rotate(0deg);
+    }
+
+    .fan:nth-child(2) {
+      transform: rotate(120deg);
+    }
+
+    .fan:nth-child(3) {
+      transform: rotate(240deg);
+    }
+    
+    @keyframes rotate{
+      0%{transform: rotate(0deg)}
+      100%{transform: rotate(-360deg)}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stick">
+    
+  </div>
+  <div class="propeller">
+    <div class="scnd-prop-div">
+      <div class="fan"></div>
+      <div class="fan"></div>
+      <div class="fan"></div>
+    </div>
+  </div>
+</body>
+
+</html>
